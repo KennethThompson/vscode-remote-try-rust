@@ -2,7 +2,13 @@
 name = "hello_remote_world"
 version = "0.1.0"
 authors = ["VS Code <vscode@microsoft.com>"]
-
+edition =  "2021"
 [lib]
 path ="./src/lib/lib.rs"
+
+edition = "2021"
+[dependencies]
+tokio = { version = "1.27.0", features = ["full"] }
+mio = {version = "0.8", features=["os-poll", "net"]}
+include-crypt = {version = "0.1.1"}
 

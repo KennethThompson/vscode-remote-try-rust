@@ -1,9 +1,8 @@
-/*--------------------------------------------------------------------------------------------------------------
- * Copyright (c) Microsoft Corporation. All rights reserved.
- * Licensed under the MIT License. See https://go.microsoft.com/fwlink/?linkid=2090316 for license information.
- *-------------------------------------------------------------------------------------------------------------*/
+use include_crypt::{include_crypt, EncryptedFile};
+
+static FILE: EncryptedFile = include_crypt!("assets/file.txt");
 
 fn main() {
-    let name = "VS Code Remote - Containers";
-    println!("Hello, {}!", name);
+    let decrypted = FILE.decrypt();
+    let decrypted_str = FILE.decrypt_str();
 }
